@@ -14,10 +14,15 @@
 '''
 print("Укажите количество журналов.")
 x = int(input(" > "))
-temp_Kata = (x / 3)
-temp_Kata += int(temp_Kata)
-temp_Peta = (x - temp_Kata) / 2
-temp_Sereja = (x - temp_Kata) / 2
+temp_number = int(x)
 
-print(
-    f"Общее количество жерналов ({x}) из них: \nПетя сделал > {int(temp_Peta)}\nКатя сделала > {int(temp_Kata)}\nСережа сдела > {int(temp_Sereja)}")
+result_three_chaild = int(temp_number / 3)
+
+temp_result_Kata = int(result_three_chaild * 2)
+
+temp_result_Peta = int(result_three_chaild / 2)
+
+temp_result_Sereja = int(result_three_chaild / 2)
+
+print(x, "->", temp_result_Peta, temp_result_Kata,
+      temp_result_Sereja, sep=' ')
