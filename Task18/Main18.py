@@ -17,16 +17,16 @@ user_list = []
 temp_Max = 0
 for i in range(1, user_Enter + 1, 1):
     user_list.append(i)
-    if (temp_Max < i):
-        temp = i
-
 
 # Блок поиска
 user_Find_Num = int(input("Find number > "))
 
+for i in user_list:
+    if (temp_Max < i and temp_Max < user_Find_Num):
+        temp_Max = i
 
 # Блок вывода
 print(user_Enter)
-print(user_list)
+print(*user_list)
 print(user_Find_Num)
-print(temp)
+print(f'-> {temp_Max}')
