@@ -18,7 +18,7 @@ for i in range(0,user_EntNum + 1):
 user_FindNum = int(input("What number to look for? > "))
 result_Find = 0
 for i in range(1,user_EntNum,1):
-    if (user_FindNum ==  user_list[i]):
+    if (user_FindNum == user_list[i]):
         result_Find +=1
 
   # Блок вывода
