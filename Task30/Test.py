@@ -10,8 +10,10 @@ app.geometry("400x780")
 app.title("CustomTkinter simple_example.py")
 
 
-def button_callback():
-    print("Button click", combobox_1.get())
+def button_callback(value):
+    value = entry_1.get()
+    print("Button click", entry_1.get())
+    return value
 
 
 def slider_callback(value):

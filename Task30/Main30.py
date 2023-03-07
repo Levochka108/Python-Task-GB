@@ -11,30 +11,53 @@ class Program():
 
         # create CTk window like you do with the Tk window
         app = ctk.CTk()
-        app.geometry(f"{440}x{340}")
+        app.geometry(f"{480}x{420}")
         app.title("Task 30")
 
-        # Внутри фоновое окно
-        frame = ctk.CTkFrame(master=app)
-        frame.pack(pady=10, padx=6, fill="both", expand=True)
+        # Внутри фоновая область в окне
+        frame_1 = ctk.CTkFrame(master=app)
+        frame_1.pack(pady=25, padx=10, fill="both", expand=True)
+
+        # тесет в нутри фоногвой области в окне
+        text_1 = ctk.CTkTextbox(master=frame_1, width=444, height=100)
+        text_1.pack(pady=10, padx=10)
+        text_temp = f"Задача 30: \nЗаполните массив элементами арифметической прогрессии.\
+            \nЕё первый элемент, разность и количество элементов нужно ввестис клавиатуры. Формула для получения n-го члена прогрессии: \
+            an = a1 + (n-1) * d. Каждое число вводится с новой строки."
+        text_1.insert("0.0", text_temp)
+
+        label = ctk.CTkLabel(master=frame_1, text="Введите элименты")
+        label.pack(pady=12, padx=10)
+
+        entry_1 = ctk.CTkEntry(master=frame_1, placeholder_text="Ввод >")
+        entry_1.pack(pady=1, padx=1)
+        entry_2 = ctk.CTkEntry(master=frame_1, placeholder_text="Ввод >")
+        entry_2.pack(pady=2, padx=2)
+        entry_3 = ctk.CTkEntry(master=frame_1, placeholder_text="Ввод >")
+        entry_3.pack(pady=3, padx=3)
 
         def button_function():
-            print("Done!!")
+            value1 = 0
+            value2 = 0
+            value3 = 0
+            value1 = int(entry_1.get())
+            value2 = int(entry_2.get())
+            value3 = int(entry_3.get())
+            arr = [value1 + (i-1)*value2 for i in range(1, value3 + 1)]
+
+            print(f"Done!!")
+            print(arr)
 
         def button_Exit():
             app.destroy()
             print("Exit Done!")
 
-        # label = ctk.CTkLabel(master=app, text="Login Sustem",
-        #                      text_font=("Roboto", 22))
-        # label.pack(relx=0.2, rely=0.2, anchor=tk.NW)
-
         # Use CTkButton instead of tkinter Button
         button = ctk.CTkButton(
-            master=app, text="Далее", command=button_function)
+            master=frame_1, text="Далее", command=button_function)
         button.place(relx=0.64, rely=0.94, anchor=tk.SW)
         button_Exit = ctk.CTkButton(
-            master=app, text="Выход", command=button_Exit)
+            master=frame_1, text="Выход", command=button_Exit)
         button_Exit.place(relx=0.2, rely=0.94, anchor=tk.S)
 
         app.mainloop()
