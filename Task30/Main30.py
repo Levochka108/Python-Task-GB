@@ -1,37 +1,42 @@
-from tkinter import *
-from tkinter import ttk
-import Message
+import tkinter as tk
+import customtkinter as ctk
 
 
-def Main():
+class Program():
+    def Main():
+        # Modes: system (default), light, dark
+        ctk.set_appearance_mode("dark")
+        # Themes: blue (default), dark-blue, green
+        ctk.set_default_color_theme("blue")
 
-    root = Tk()
+        # create CTk window like you do with the Tk window
+        app = ctk.CTk()
+        app.geometry(f"{440}x{340}")
+        app.title("Task 30")
 
-    root.title("Task28")
+        # Внутри фоновое окно
+        frame = ctk.CTkFrame(master=app)
+        frame.pack(pady=10, padx=6, fill="both", expand=True)
 
-    root.geometry("300x200")
-    root["bg"] = "gray26"
+        def button_function():
+            print("Done!!")
 
-    def click():
-        label["text"] = entery.get()
-        print("Команда выполнина!")
+        def button_Exit():
+            app.destroy()
+            print("Exit Done!")
 
-    entery = ttk.Entry()
-    entery.pack(anchor=NW, padx=6, pady=6)
+        # label = ctk.CTkLabel(master=app, text="Login Sustem",
+        #                      text_font=("Roboto", 22))
+        # label.pack(relx=0.2, rely=0.2, anchor=tk.NW)
 
-    label = ttk.Label()
-    label.pack(anchor=NW, padx=6, pady=6)
+        # Use CTkButton instead of tkinter Button
+        button = ctk.CTkButton(
+            master=app, text="Далее", command=button_function)
+        button.place(relx=0.64, rely=0.94, anchor=tk.SW)
+        button_Exit = ctk.CTkButton(
+            master=app, text="Выход", command=button_Exit)
+        button_Exit.place(relx=0.2, rely=0.94, anchor=tk.S)
 
-    # Кнопка Выход
-    btn = Button(root, bg='#8d8d8d', text="Выход",  fg='white')
-    btn.pack(side=LEFT, anchor=SW, padx=15, pady=15)
+        app.mainloop()
 
-    # Кнопка далее
-    btn_Exit = Button(root, bg='#8d8d8d', text="Далее",
-                      fg='white', command=click)
-    btn_Exit.pack(side=RIGHT, anchor=SE, padx=15, pady=15)
-
-    root.mainloop()
-
-
-Main()
+    Main()
