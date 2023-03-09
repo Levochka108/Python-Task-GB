@@ -1,6 +1,7 @@
+__versin__ = "1.0.1"
+
 import tkinter as tk
 import customtkinter as ctk
-import os
 
 
 class Program():
@@ -49,15 +50,47 @@ class Program():
         label.pack(pady=10, padx=20)
 
         def button_function():
+
+            def exit_window_1():
+                new_windows.destroy()
+                print("Windows destroy!")
+
+            count = 0
+
             value1 = 0
             value2 = 0
             value3 = 0
             value1 = int(entry_1.get())
             value2 = int(entry_2.get())
             value3 = int(entry_3.get())
+
             arr = [value1 + (i-1)*value2 for i in range(1, value3 + 1)]
+            count += 1
+
+            new_windows = ctk.CTkToplevel()
+            new_windows.geometry(f"{480}x{420}")
+            new_windows.title("Task 30")
+
+            frame_2 = ctk.CTkFrame(master=new_windows)
+            frame_2.pack(pady=25, padx=10, fill="both", expand=True)
+
+            button_Exit = ctk.CTkButton(
+                master=frame_2, text="Выход", font=("Times", 14), command=exit_window_1)
+            button_Exit.place(relx=0.2, rely=0.94, anchor=tk.S)
+
+            label_win = ctk.CTkLabel(
+                master=frame_2, text=f"Ответ > {arr}", font=("Times", 11))
+            label_win.pack(pady=10, padx=20)
+
             print(f"Done!!")
             print(arr)
+
+            if count != 0:
+                entry_1.delete("0", "100")
+                entry_2.delete("0", "100")
+                entry_3.delete("0", "100")
+                positive = 'Запись успешно добалена!'
+                print(positive)
 
         def button_Exit():
             app.destroy()
