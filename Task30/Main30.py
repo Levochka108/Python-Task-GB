@@ -36,13 +36,13 @@ class Program():
 
         # Поля ввода текста
         entry_1 = ctk.CTkEntry(
-            master=frame_1, placeholder_text="Ввод >", font=("Times", 14))
+            master=frame_1, placeholder_text="Первый элимент >", font=("Times", 14))
         entry_1.pack(pady=1, padx=1)
         entry_2 = ctk.CTkEntry(
-            master=frame_1, placeholder_text="Ввод >", font=("Times", 14))
+            master=frame_1, placeholder_text="Разность >", font=("Times", 14))
         entry_2.pack(pady=2, padx=2)
         entry_3 = ctk.CTkEntry(
-            master=frame_1, placeholder_text="Ввод >", font=("Times", 14))
+            master=frame_1, placeholder_text="Кол. элементов >", font=("Times", 14))
         entry_3.pack(pady=3, padx=3)
 
         label = ctk.CTkLabel(
@@ -69,7 +69,7 @@ class Program():
 
             new_windows = ctk.CTkToplevel()
             new_windows.geometry(f"{480}x{420}")
-            new_windows.title("Task 30")
+            new_windows.title("Task 30 window")
 
             frame_2 = ctk.CTkFrame(master=new_windows)
             frame_2.pack(pady=25, padx=10, fill="both", expand=True)
