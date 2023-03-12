@@ -185,7 +185,7 @@
         <tr>
             <td rowspan=8 align="center"><h3>Work Book №1 ></td>
             <td rowspan=4 align="center"><h3>Запись ></td>
-            <td align="center">Фимилия</td>
+            <td align="center">Фaмилия</td>
         </tr>
         <tr>
         <td align="center">Имя</td>
