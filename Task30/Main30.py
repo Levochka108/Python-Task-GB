@@ -52,6 +52,7 @@ class Program():
         def button_function():
 
             def exit_window_1():
+
                 new_windows.destroy()
                 print("Windows destroy!")
 
