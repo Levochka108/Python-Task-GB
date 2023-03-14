@@ -34,7 +34,8 @@ def choice():
 
 
 def creating():
-    file = 'DataBase_phone_book.csv'
+    file = 'D:\GB\python\Task\Task38\DataBase_phone_book.csv'
     with open(file, 'w', encoding='utf-8') as data:
         data.write(f'Фамилия;Имя;Номер телефона;Описание\n')
-        print("Фаил создан.")
+
+    print("Фаил создан.")

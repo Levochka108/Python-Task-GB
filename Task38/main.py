@@ -1,8 +1,9 @@
+__version__ = "_1.0.0_"
 '''
 функция main и ее реализация
 
 '''
-__version__ = "_1.0.0_"
+
 
 from interface import choice
 import os
