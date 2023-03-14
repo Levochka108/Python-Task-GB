@@ -1,11 +1,11 @@
-__version__ = "_1.0.0_"
+__version__ = "_1.0.1_"
 '''
 функция main и ее реализация
 
 '''
 
 
-from interface import choice
+from System_Interface import choice
 import os
 
 # очищает поле  терминала
