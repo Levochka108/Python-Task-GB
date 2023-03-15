@@ -33,4 +33,4 @@ def write_txt_file(info):
     file = 'D:\GB\python\Task\data_book.txt'
     with open(file, 'a', encoding='utf-8') as data:
         data.write(
-            f'📝Фамилия > {info[0]}\n\n📝Имя > {info[1]}\n\n📝Номер телефона > {info[2]}\n\n📝Описание > {info[3]}\n\n\n')
+            f'👥Фамилия > {info[0]}\n\n👤Имя > {info[1]}\n\n📱Номер телефона > {info[2]}\n\n📝Описание > {info[3]}\n\n\n')
