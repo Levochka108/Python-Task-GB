@@ -5,7 +5,7 @@ __version__ = "_1.0.1_"
 '''
 
 
-from System_Interface import choice
+from System_Interface import Menu_Bar
 import os
 
 # очищает поле  терминала
@@ -17,6 +17,6 @@ class Program:
           "Версия программы ", __version__)
 
     def main():
-        choice()
+        Menu_Bar()
 
     main()
